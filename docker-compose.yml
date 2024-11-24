@@ -9,7 +9,7 @@ services:
     ports:
       - "3307:3306"
     networks:
-      - app-network
+      - spring-network
 
   app:
     build: .
@@ -23,8 +23,8 @@ services:
     depends_on:
       - mysql
     networks:
-      - app-network
+      - spring-network
 
 networks:
-  app-network:
+  spring-network:
     driver: bridge
